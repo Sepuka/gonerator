@@ -32,22 +32,17 @@ func TestUint8(t *testing.T) {
 func TestUint16(t *testing.T) {
 	var result []uint16
 
-	for i := 0; i < loop; i++ {
-		result = SeqUint16(i)
-		for _, element := range result {
-			inRange(t, minUnsignedInt, maxUint16, uint64(element))
-		}
+	for _, element := range result {
+		inRange(t, minUnsignedInt, maxUint16, uint64(element))
 	}
 }
 
 func TestUint32(t *testing.T) {
 	var result []uint32
 
-	for i := 0; i < loop; i++ {
-		result = SeqUint32(i)
-		for _, element := range result {
-			inRange(t, minUnsignedInt, maxUint32, uint64(element))
-		}
+	result = SeqUint32(loop)
+	for _, element := range result {
+		inRange(t, minUnsignedInt, maxUint32, uint64(element))
 	}
 }
 
@@ -55,11 +50,9 @@ func TestUint64(t *testing.T) {
 	var result []uint64
 	var i uint
 
-	for i = 0; i < loop; i++ {
-		result = SeqUint64(i)
-		for _, element := range result {
-			inRange(t, minUnsignedInt, maxUint64, element)
-		}
+	result = SeqUint64(i)
+	for _, element := range result {
+		inRange(t, minUnsignedInt, maxUint64, element)
 	}
 }
 
